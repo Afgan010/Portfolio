@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-color: #dfdfdf;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+}
+
+body {
+  height: 80px;
+}
+body .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #000;
+  padding: 20px 0;
+}
+body .header .container {
+  width: 85%;
+}
+body .header .container .row {
+  justify-content: space-between;
+  align-items: center;
+}
+body .header .container .row .logo {
+  width: 60px;
+  height: 50px;
+}
+body .header .container .row .logo img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(0) invert(1);
+}
+body .header .container .row .navBar .navlist {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+body .header .container .row .navBar .navlist .listItem {
+  padding: 13px 18px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+body .header .container .row .navBar .navlist .listItem a {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+body .header .container .row .navBar .navlist .listItem:hover {
+  background-color: #fff;
+}
+body .header .container .row .navBar .navlist .listItem:hover a {
+  color: #000;
+}
+
+.hero .container {
+  width: 85%;
+}
+.hero .container .row {
+  display: flex;
+}
+.hero .container .row .leftSide {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.hero .container .row .leftSide .text {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.hero .container .row .leftSide .author .name {
+  font-size: 65px;
+  font-weight: bold;
+}
+.hero .container .row .leftSide .author .description {
+  color: gray;
+  font-size: 20px;
+}
+.hero .container .row .leftSide .socials {
+  display: flex;
+  gap: 25px;
+}
+.hero .container .row .rightSide {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero .container .row .rightSide img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.main #about {
+  background-color: #dfdfdf;
+  padding: 40px 0;
+}
+.main #about .container .title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 0 40px;
+}
+.main #about .container .title span {
+  display: inline-block;
+  padding: 15px 60px;
+  border: 5px solid black;
+}
+.main #about .container .description {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+}
+.main #about .container .explore {
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  padding: 30px;
+}
+.main #about .container .explore h3 {
+  text-transform: uppercase;
+  padding: 8px 40px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.main #about .container .icon {
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 0 0 30px;
+}
+.main #about .container .icon img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.main #about .container .info {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+.main #about .container .info .desing .desingTitle {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 0 20px;
+}
+.main #about .container .info .desing .desingInfo {
+  font-size: 14px;
+  font-weight: 100;
+}
+.main #about .container .info .development .developmentTitle {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 0 20px;
+}
+.main #about .container .info .development .developmentInfo {
+  font-size: 14px;
+  font-weight: 100;
+}
+.main #about .container .infoTwo {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+.main #about .container .infoTwo .maintance .maintanceTitle {
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0 0 20px;
+}
+.main #about .container .infoTwo .maintance .maintanceInfo {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.main #skills .container .title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 0 40px;
+}
+.main #skills .container .title span {
+  display: inline-block;
+  padding: 15px 60px;
+  border: 5px solid black;
+}
+.main #skills .container .text {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 50px;
+}
+.main #skills .container .imgContainer {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+.main #skills .container .imgContainer .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.main #portfolio .title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 0 40px;
+}
+.main #portfolio .title span {
+  display: inline-block;
+  padding: 15px 60px;
+  border: 5px solid black;
+}
+.main #portfolio .choose {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  padding: 10px;
+}
+.main #portfolio .choose p {
+  font-size: 14px;
+  font-weight: 100;
+  color: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid white;
+}
+.main #portfolio .allProjects {
+  background-color: #000;
+}
+.main #portfolio .allProjects .projectTop {
+  display: flex;
+}
+.main #portfolio .allProjects .projectTop .project {
+  width: 33.3%;
+}
+.main #portfolio .allProjects .projectTop .project a img {
+  width: 100%;
+}
+.main #portfolio .allProjects .projectBottom {
+  display: flex;
+}
+.main #portfolio .allProjects .projectBottom .project {
+  width: 33.3%;
+}
+.main #portfolio .allProjects .projectBottom .project a img {
+  width: 100%;
+}
+.main #portfolio .more {
+  text-align: center;
+  background-color: #000;
+}
+.main #portfolio .more a {
+  font-size: 18px;
+  font-weight: 200;
+  color: #fff;
+}
+
+.main #contact .container {
+  padding: 40px 0;
+}
+.main #contact .container .title {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  padding: 0 0 40px;
+}
+.main #contact .container .title span {
+  display: inline-block;
+  padding: 15px 60px;
+  border: 5px solid black;
+}
+.main #contact .container .description {
+  padding: 0 0 30px;
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+}
+.main #contact .container .icon {
+  max-width: 100px;
+  margin: 0 auto;
+  padding: 0 0 30px;
+}
+.main #contact .container .icon img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.main #contact .container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.main #contact .container form .inp {
+  width: 600px;
+  height: 80px;
+  background-color: #dfdfdf;
+  border: none;
+  border-bottom: 5px solid black;
+  border-left: 5px solid black;
+  border-radius: 8px;
+}
+.main #contact .container form .inp:focus {
+  outline: none;
+}
+.main #contact .container form .textarea {
+  resize: vertical;
+}
+.main #contact .container form .btn {
+  background-color: #dfdfdf;
+  font-weight: bold;
+  padding: 12px 40px;
+  border: none;
+  border-left: 5px solid black;
+  border-right: 5px solid black;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.footer {
+  background-color: #000;
+}
+.footer .container .return {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.footer .container .return img {
+  width: 15px;
+  height: 15px;
+}
+.footer .container .return span {
+  color: #fff;
+}
+.footer .container .socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 0 20px;
+}
+.footer .container .socials a img {
+  width: 30px;
+  height: 30px;
+}
+.footer .container .authors {
+  padding: 0 0 20px;
+}
+.footer .container .authors p {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+}/*# sourceMappingURL=index.css.map */

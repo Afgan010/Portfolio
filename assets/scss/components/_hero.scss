@@ -1,0 +1,47 @@
+@use "../variables" as c;
+
+.hero {
+  .container {
+    width: 85%;
+    .row {
+      display: flex;
+      .leftSide {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        .text {
+          font-size: 30px;
+          font-weight: bold;
+          margin-bottom: 30px;
+        }
+        .author {
+          .name {
+            font-size: 65px;
+            font-weight: bold;
+          }
+          .description {
+            color: gray;
+            font-size: 20px;
+          }
+        }
+        .socials {
+          display: flex;
+          gap: 25px;
+        }
+      }
+      .rightSide {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          max-width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

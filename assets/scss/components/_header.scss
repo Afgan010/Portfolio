@@ -1,0 +1,49 @@
+@use "../variables" as c;
+
+body {
+  height: 80px;
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: c.$dark;
+    padding: 20px 0;
+    .container {
+      width: 85%;
+      .row {
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+          width: 60px;
+          height: 50px;
+          img {
+            object-fit: cover;
+            filter: brightness(0) invert(1);
+          }
+        }
+        .navBar {
+          .navlist {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .listItem {
+              padding: 13px 18px;
+              transition: all 0.3s ease;
+              border-radius: 12px;
+              a {
+                color: c.$pureWhite;
+                transition: all 0.3s ease;
+              }
+              &:hover {
+                background-color: c.$pureWhite;
+                a {
+                  color: c.$dark;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use "../variables" as c;
+
+.footer {
+  background-color: c.$dark;
+  .container {
+    .return {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      img {
+        width: 15px;
+        height: 15px;
+      }
+      span {
+        color: c.$pureWhite;
+      }
+    }
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 0 20px;
+      a {
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .authors {
+      padding: 0 0 20px;
+      p {
+        text-align: center;
+        color: c.$pureWhite;
+        font-size: 14px;
+      }
+    }
+  }
+}
