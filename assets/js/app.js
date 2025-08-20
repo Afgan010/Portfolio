@@ -20,21 +20,6 @@ const heroData = {
   ],
   mainImage: "./assets/images/mainImage.svg.svg",
 };
-
-heroSocials.textContent = heroData.description;
-heroImg.src = heroData.mainImage;
-
-socialsContainer.innerHTML = "";
-heroData.socials.forEach((s) => {
-  const a = document.createElement("a");
-  a.href = s.link;
-  const img = document.createElement("img");
-  img.src = s.img;
-  img.alt = "icon";
-  a.appendChild(img);
-  socialsContainer.appendChild(a);
-});
-
 const aboutData = {
   description:
     "Nulla in velit a metus rhoncus tempus. Nulla congue nulla vel sem varius finibus. Sed ornare sit amet lorem <br /> sed viverra. In vel urna quis libero viverra facilisis ut ac est.",
@@ -56,6 +41,20 @@ const aboutData = {
     },
   },
 };
+
+heroSocials.textContent = heroData.description;
+heroImg.src = heroData.mainImage;
+
+socialsContainer.innerHTML = "";
+heroData.socials.forEach((s) => {
+  const a = document.createElement("a");
+  a.href = s.link;
+  const img = document.createElement("img");
+  img.src = s.img;
+  img.alt = "icon";
+  a.appendChild(img);
+  socialsContainer.appendChild(a);
+});
 
 aboutDescription.innerHTML = aboutData.description;
 
