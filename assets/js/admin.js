@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ====== Default şəkillər ======
   const images = [
     "./assets/images/Project (1).png",
     "./assets/images/Rectangle 17.png",
@@ -9,10 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     "./assets/images/Project (4).png",
   ];
 
-  // ====== Projects array-i ======
   let projects = JSON.parse(localStorage.getItem("projects"));
 
-  // Əgər localStorage boşdursa, default project-ləri əlavə et
   if (!projects || projects.length === 0) {
     projects = [
       { category: "coded", link: "#", image: images[0] },
@@ -24,16 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("projects", JSON.stringify(projects));
   }
 
-  // ====== HTML elementləri ======
   const form = document.getElementById("projectForm");
   const tableContainer = document.getElementById("projectsTable");
 
-  // ====== LocalStorage-a yazmaq funksiyası ======
   function saveToLocal() {
     localStorage.setItem("projects", JSON.stringify(projects));
   }
 
-  // ====== Projectləri render etmək ======
   function renderProjects() {
     if (projects.length === 0) {
       tableContainer.innerHTML = "<p>No projects added yet.</p>";
@@ -71,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  // ====== Yeni project əlavə etmək ======
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     const category = document
@@ -81,12 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const link = document.getElementById("projectLink").value.trim();
     const randomImage = images[projects.length % images.length];
 
-    // dataset.editIndex varsa edit rejimi, yoxdursa yeni project
     if (form.dataset.editIndex === undefined || form.dataset.editIndex === "") {
-      // Yeni project əlavə et
       projects.push({ image: randomImage, category, link });
     } else {
-      // Edit rejimi
       const index = parseInt(form.dataset.editIndex);
       projects[index] = { image: projects[index].image, category, link };
       delete form.dataset.editIndex;
@@ -97,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderProjects();
   });
 
-  // ====== Silmə funksiyası ======
   window.deleteProject = function (index) {
     if (confirm("Are you sure you want to delete this project?")) {
       projects.splice(index, 1);
@@ -106,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // ====== Edit funksiyası ======
   window.editProject = function (index) {
     const project = projects[index];
     document.getElementById("projectCategory").value = project.category;
@@ -114,6 +102,5 @@ document.addEventListener("DOMContentLoaded", () => {
     form.dataset.editIndex = index;
   };
 
-  // ====== İlk render ======
   renderProjects();
 });
