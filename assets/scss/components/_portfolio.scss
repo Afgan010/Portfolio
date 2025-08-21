@@ -20,12 +20,38 @@
       padding: 10px;
       p {
         font-size: 14px;
-        font-weight: 100;
+        font-weight: 500;
         color: c.$pureWhite;
         padding: 10px 20px;
-        border-bottom: 1px solid white;
+        cursor: pointer;
+        opacity: 0.6;
+        transition: all 0.3s ease;
+        &:hover {
+          border-radius: 4px;
+          background-color: c.$pureWhite;
+          color: c.$dark;
+          opacity: 1;
+        }
       }
     }
+    #portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project {
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .project img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
     .allProjects {
       background-color: c.$dark;
       .projectTop {

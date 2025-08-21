@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/scss/index.css" />
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Admin Panel</h2>
+
+    <form id="projectForm">
+      <input
+        type="text"
+        id="projectCategory"
+        placeholder="Category (coded/designed)"
+        required
+      />
+      <input type="text" id="projectLink" placeholder="Project link" required />
+      <button type="submit">Add Project</button>
+    </form>
+
+    <hr />
+
+    <div id="projectsTable"></div>
+
+    <script src="./assets/js/admin.js"></script>
+  </body>
+</html>

@@ -77,7 +77,7 @@
           </div>
         </div>
       </section>
-      <section id="skills">
+      <!-- <section id="skills">
         <div class="container">
           <h3 class="title">
             <span>SKILLS</span>
@@ -167,54 +167,34 @@
             </div>
           </div>
         </div>
+      </section> -->
+      <section id="skills">
+        <div class="container">
+          <h3 class="title"><span>Skills</span></h3>
+
+          <h4 class="text">Using Now:</h4>
+          <div id="using-now" class="imgContainer"></div>
+
+          <h4 class="text">Learning:</h4>
+          <div id="learning" class="imgContainer"></div>
+
+          <h4 class="text">Other Skills:</h4>
+          <div id="other-skills" class="imgContainer"></div>
+        </div>
       </section>
+
       <section id="portfolio">
-        <h3 class="title">
-          <span>PORTFOLIO</span>
-        </h3>
+        <h3 class="title"><span>PORTFOLIO</span></h3>
+
         <div class="choose">
-          <p>ALL</p>
-          <p>CODED</p>
-          <p>DESIGNED</p>
+          <p data-filter="all" class="active">ALL</p>
+          <p data-filter="coded">CODED</p>
+          <p data-filter="designed">DESIGNED</p>
         </div>
-        <div class="allProjects">
-          <div class="projectTop">
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Project (1).png" alt="project" />
-              </a>
-            </div>
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Rectangle 17.png" alt="project" />
-              </a>
-            </div>
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Project.png" alt="project" />
-              </a>
-            </div>
-          </div>
-          <div class="projectBottom">
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Project (2).png" alt="project" />
-              </a>
-            </div>
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Project (3).png" alt="project" />
-              </a>
-            </div>
-            <div class="project">
-              <a href="#">
-                <img src="./assets/images/Project (4).png" alt="project" />
-              </a>
-            </div>
-          </div>
-        </div>
-        <p class="more"><a href="#">And many more to come!</a></p>
+
+        <div class="allProjects" id="portfolio-container"></div>
       </section>
+
       <section id="contact">
         <div class="container">
           <h3 class="title">
@@ -228,7 +208,7 @@
           <div class="icon">
             <img src="./assets/images/black2.png" alt="icon" />
           </div>
-          <form>
+          <!-- <form>
             <input
               class="inp"
               type="text"
@@ -257,22 +237,72 @@
               required
             ></textarea>
             <button class="btn">SUBMIT</button>
+          </form> -->
+          <form id="contactForm">
+            <div class="form-group">
+              <input
+                class="inp"
+                type="text"
+                name="name"
+                placeholder="ENTER YOUR NAME*"
+              />
+              <span class="error"></span>
+            </div>
+
+            <div class="form-group">
+              <input
+                class="inp"
+                type="text"
+                name="email"
+                placeholder="ENTER YOUR EMAIL*"
+              />
+              <span class="error"></span>
+            </div>
+
+            <div class="form-group">
+              <input
+                class="inp"
+                type="text"
+                name="phone"
+                placeholder="PHONE NUMBER"
+              />
+              <span class="error"></span>
+            </div>
+
+            <div class="form-group">
+              <textarea
+                class="inp textarea"
+                name="message"
+                placeholder="YOUR MESSAGE"
+              ></textarea>
+              <span class="error"></span>
+            </div>
+
+            <button class="btn" type="submit">SUBMIT</button>
           </form>
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="container">
-        <a href="#home" class="return">
-          <img src="./assets/images/arrow.svg" alt="icon" />
-          <span>BACK TO TOP</span>
-        </a>
+        
         <div class="socials">
           <a href="#"><img src="./assets/images/facebook.svg" alt="icon" /></a>
           <a href="#"><img src="./assets/images/instagram.svg" alt="icon" /></a>
           <a href="#"><img src="./assets/images/linkedin.svg" alt="icon" /></a>
           <a href="#"><img src="./assets/images/email.svg" alt="icon" /></a>
         </div>
+      
+      </div>
+    </footer> -->
+
+    <footer id="footer">
+      <div class="container">
+        <a href="#home" class="return">
+          <img src="./assets/images/arrow.svg" alt="icon" />
+          <span>BACK TO TOP</span>
+        </a>
+        <div class="socials footer-socials"></div>
         <div class="authors">
           <p>@2020 Tomasz Gajda All Rights Reserved.</p>
         </div>

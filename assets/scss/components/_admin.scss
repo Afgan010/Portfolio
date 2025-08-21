@@ -1,0 +1,106 @@
+h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+form#projectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #4a90e2;
+      outline: none;
+    }
+  }
+
+  button {
+    padding: 12px;
+    background-color: #4a90e2;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #357abd;
+    }
+  }
+}
+
+#projectsTable {
+  max-width: 800px;
+  margin: 0 auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    th,
+    td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #4a90e2;
+      color: #fff;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    img {
+      max-width: 80px;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 6px 12px;
+      margin: 0 2px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:first-of-type {
+        background-color: #f0ad4e;
+        color: #fff;
+
+        &:hover {
+          background-color: #d9952b;
+        }
+      }
+
+      &:last-of-type {
+        background-color: #d9534f;
+        color: #fff;
+
+        &:hover {
+          background-color: #c9302c;
+        }
+      }
+    }
+  }
+}

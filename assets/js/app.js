@@ -10,6 +10,7 @@ const aboutDevelopmentTitle = document.querySelector(".developmentTitle");
 const aboutDevelopmentInfo = document.querySelector(".developmentInfo");
 const aboutMaintanceTitle = document.querySelector(".maintanceTitle");
 const aboutMaintanceInfo = document.querySelector(".maintanceInfo");
+const footerContainer = document.querySelector(".footer-socials");
 
 const heroData = {
   description: "Front-end Developer / UI Designer",
@@ -41,6 +42,105 @@ const aboutData = {
     },
   },
 };
+const skills = {
+  usingNow: [
+    { name: "HTML 5", img: "./assets/images/Html.svg", alt: "HTML5 Logo" },
+    { name: "CSS 3", img: "./assets/images/css.svg", alt: "CSS3 Logo" },
+    { name: "Sass", img: "./assets/images/Sass.svg", alt: "Sass Logo" },
+    {
+      name: "JavaScript",
+      img: "./assets/images/javascript.svg",
+      alt: "JavaScript Logo",
+    },
+    { name: "React", img: "./assets/images/react.svg", alt: "React Logo" },
+    {
+      name: "Bootstrap",
+      img: "./assets/images/bootstrap-solid 1.png",
+      alt: "Bootstrap Logo",
+    },
+    {
+      name: "Git",
+      img: "./assets/images/Git-Icon-1788C 1.png",
+      alt: "Git Logo",
+    },
+    { name: "Figma", img: "./assets/images/figma.svg", alt: "Figma Logo" },
+  ],
+  learning: [
+    { name: "Node.js", img: "./assets/images/node.png", alt: "Node.js Logo" },
+    { name: "MySQL", img: "./assets/images/Delphin.svg", alt: "MySQL Logo" },
+    {
+      name: "MongoDB",
+      img: "./assets/images/mongodb.png",
+      alt: "MongoDB Logo",
+    },
+    {
+      name: "TypeScript",
+      img: "./assets/images/typescript.png",
+      alt: "TypeScript Logo",
+    },
+  ],
+  other: [
+    {
+      name: "English: <br /> C1/C2",
+      img: "./assets/images/british.svg",
+      alt: "English Flag",
+    },
+    {
+      name: "Spanish: <br /> B1/B2",
+      img: "./assets/images/spain.svg",
+      alt: "Spanish Flag",
+    },
+    { name: "C++", img: "./assets/images/c++.svg", alt: "C++ Logo" },
+    { name: "C", img: "./assets/images/C.svg", alt: "C Logo" },
+  ],
+};
+
+const projects = [
+  {
+    category: "coded",
+    img: "./assets/images/Project (1).png",
+    alt: "Coded Project 1",
+    link: "#",
+  },
+  {
+    category: "coded",
+    img: "./assets/images/Rectangle 17.png",
+    alt: "Coded Project 2",
+    link: "#",
+  },
+  {
+    category: "designed",
+    img: "./assets/images/Project.png",
+    alt: "Designed Project 1",
+    link: "#",
+  },
+  {
+    category: "coded",
+    img: "./assets/images/Project (3).png",
+    alt: "Coded Project 3",
+    link: "#",
+  },
+  {
+    category: "designed",
+    img: "./assets/images/Project (2).png",
+    alt: "Designed Project 2",
+    link: "#",
+  },
+  {
+    category: "coded",
+    img: "./assets/images/Project (4).png",
+    alt: "Coded Project 4",
+    link: "#",
+  },
+];
+const footerData = {
+  socials: [
+    { link: "#", img: "./assets/images/facebook.svg", alt: "Facebook" },
+    { link: "#", img: "./assets/images/instagram.svg", alt: "Instagram" },
+    { link: "#", img: "./assets/images/linkedin.svg", alt: "LinkedIn" },
+    { link: "#", img: "./assets/images/email.svg", alt: "Email" },
+  ],
+};
 
 heroSocials.textContent = heroData.description;
 heroImg.src = heroData.mainImage;
@@ -70,3 +170,98 @@ aboutDevelopmentInfo.innerHTML = aboutData.info.development.text;
 
 aboutMaintanceTitle.textContent = aboutData.infoTwo.maintance.title;
 aboutMaintanceInfo.innerHTML = aboutData.infoTwo.maintance.text;
+
+function renderSkills(containerId, data) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = data
+    .map(
+      (skill) => `
+        <div class="logo">
+          <img src="${skill.img}" alt="${skill.alt}" />
+          <p>${skill.name}</p>
+        </div>
+      `
+    )
+    .join("");
+}
+
+renderSkills("using-now", skills.usingNow);
+renderSkills("learning", skills.learning);
+renderSkills("other-skills", skills.other);
+
+const container = document.getElementById("portfolio-container");
+const filterBtns = document.querySelectorAll(".choose p");
+
+function renderProjects(filter = "all") {
+  container.innerHTML = projects
+    .filter((p) => filter === "all" || p.category === filter)
+    .map(
+      (p) => `
+      <div class="project">
+        <a href="${p.link}">
+          <img src="${p.img}" alt="${p.alt}" />
+        </a>
+      </div>
+    `
+    )
+    .join("");
+}
+
+renderProjects("all");
+
+filterBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    filterBtns.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const filter = btn.getAttribute("data-filter");
+    renderProjects(filter);
+  });
+});
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  let errorSpans = document.querySelectorAll(".error");
+  errorSpans.forEach((span) => (span.textContent = ""));
+
+  let name = this.name.value.trim();
+  let email = this.email.value.trim();
+  let phone = this.phone.value.trim();
+  let message = this.message.value.trim();
+
+  if (name.length < 3) {
+    this.name.nextElementSibling.textContent = "Minimum 2 hərfli ad daxil edin";
+    valid = false;
+  }
+
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    this.email.nextElementSibling.textContent = "düzgün email daxil edin";
+    valid = false;
+  }
+
+  let phonePattern = /^\+?[0-9]{7,15}$/;
+  if (!phonePattern.test(phone)) {
+    this.phone.nextElementSibling.textContent = "nömrəni düzgün daxil edin.";
+    valid = false;
+  }
+
+  if (message.length < 10) {
+    this.message.nextElementSibling.textContent = "minimum 10 hərf daxil edin";
+    valid = false;
+  }
+
+  if (valid) {
+    alert("Form ugurla daxil edildi");
+    this.reset();
+  }
+});
+
+footerData.socials.forEach((s) => {
+  const a = document.createElement("a");
+  a.href = s.link;
+  a.innerHTML = `<img src="${s.img}" alt="${s.alt}">`;
+  footerContainer.appendChild(a);
+});

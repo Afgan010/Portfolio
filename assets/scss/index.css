@@ -209,6 +209,12 @@ body .header .container .row .navBar .navlist .listItem:hover a {
   font-weight: bold;
   padding-bottom: 50px;
 }
+.main #skills .container #using-now {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
 .main #skills .container .imgContainer {
   display: flex;
   justify-content: space-around;
@@ -240,10 +246,34 @@ body .header .container .row .navBar .navlist .listItem:hover a {
 }
 .main #portfolio .choose p {
   font-size: 14px;
-  font-weight: 100;
+  font-weight: 500;
   color: #fff;
   padding: 10px 20px;
-  border-bottom: 1px solid white;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.main #portfolio .choose p:hover {
+  border-radius: 4px;
+  background-color: #fff;
+  color: #000;
+  opacity: 1;
+}
+.main #portfolio #portfolio-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.main #portfolio .project {
+  overflow: hidden;
+  border-radius: 8px;
+}
+.main #portfolio .project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main #portfolio .allProjects {
   background-color: #000;
@@ -340,11 +370,17 @@ body .header .container .row .navBar .navlist .listItem:hover a {
   border-radius: 3px;
   cursor: pointer;
 }
+.main #contact .container form .error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
 
-.footer {
+#footer {
   background-color: #000;
 }
-.footer .container .return {
+#footer .container .return {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -352,28 +388,121 @@ body .header .container .row .navBar .navlist .listItem:hover a {
   justify-content: center;
   gap: 8px;
 }
-.footer .container .return img {
+#footer .container .return img {
   width: 15px;
   height: 15px;
 }
-.footer .container .return span {
+#footer .container .return span {
   color: #fff;
 }
-.footer .container .socials {
+#footer .container .socials {
   display: flex;
   justify-content: center;
   gap: 30px;
   padding: 0 0 20px;
 }
-.footer .container .socials a img {
+#footer .container .socials a img {
   width: 30px;
   height: 30px;
 }
-.footer .container .authors {
+#footer .container .authors {
   padding: 0 0 20px;
 }
-.footer .container .authors p {
+#footer .container .authors p {
   text-align: center;
   color: #fff;
   font-size: 14px;
+}
+
+h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+form#projectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+form#projectForm input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+form#projectForm input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+form#projectForm button {
+  padding: 12px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+form#projectForm button:hover {
+  background-color: #357abd;
+}
+
+#projectsTable {
+  max-width: 800px;
+  margin: 0 auto;
+}
+#projectsTable table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+#projectsTable table th,
+#projectsTable table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+#projectsTable table th {
+  background-color: #4a90e2;
+  color: #fff;
+}
+#projectsTable table tr:last-child td {
+  border-bottom: none;
+}
+#projectsTable table img {
+  max-width: 80px;
+  border-radius: 6px;
+}
+#projectsTable table button {
+  padding: 6px 12px;
+  margin: 0 2px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#projectsTable table button:first-of-type {
+  background-color: #f0ad4e;
+  color: #fff;
+}
+#projectsTable table button:first-of-type:hover {
+  background-color: #d9952b;
+}
+#projectsTable table button:last-of-type {
+  background-color: #d9534f;
+  color: #fff;
+}
+#projectsTable table button:last-of-type:hover {
+  background-color: #c9302c;
 }/*# sourceMappingURL=index.css.map */
